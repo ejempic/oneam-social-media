@@ -8,9 +8,18 @@
 4. setup database `bastabikol` schema 
 5. run `php artisan key:generate`
 6. run `php artisan ide-helper:generate` (optional)
-7. run `npm install && run dev`
-8. run `php artisan migrate --seed`]
-9. browse (http://basta-bicol-v2.test)
+7. run `npm install && run watch`
+8. run `php artisan pwa:install`
+9. run `php artisan migrate --seed`
+10. browse (https://basta-bicol-v2.test)
+
+### First aid
+
+````
+php artisan config:cache
+php artisan view:clear
+composer dumpautoload
+````
 
 ### Demo Credentials
 

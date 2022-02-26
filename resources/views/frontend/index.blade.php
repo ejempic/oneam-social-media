@@ -66,6 +66,7 @@
         </style>
         @stack('after-styles')
     </head>
+    {{ pwa_meta() }}
     <body>
         @include('includes.partials.read-only')
         @include('includes.partials.logged-in-as')
