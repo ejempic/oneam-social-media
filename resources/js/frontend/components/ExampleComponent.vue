@@ -1,5 +1,5 @@
 <template>
-    <span>Laravel Boilerplate</span>
+    <span>Basta Bicol</span>
 </template>
 
 <script>
