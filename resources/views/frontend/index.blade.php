@@ -93,7 +93,7 @@
                 @include('includes.partials.messages')
 
                 <div class="title m-b-md">
-                    <example-component></example-component>
+                    Example
                 </div><!--title-->
 
             </div><!--content-->
