@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\PostController;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +17,4 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-Route::apiResource('post', PostController::class);
+Route::apiResource('posts', PostController::class);

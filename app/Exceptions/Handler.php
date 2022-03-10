@@ -6,6 +6,7 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Spatie\Permission\Exceptions\UnauthorizedException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 /**
@@ -73,6 +74,11 @@ class Handler extends ExceptionHandler
             return redirect()
                 ->route(homeRoute())
                 ->withFlashDanger(__('The requested resource was not found.'));
+        }
+
+        if ($exception instanceof NotFoundHttpException) {
+            return response()
+                ->json(__('Naliligaw ka ata.'));
         }
 
         return parent::render($request, $exception);

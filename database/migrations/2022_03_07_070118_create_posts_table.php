@@ -17,12 +17,12 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->text('data');
-            $table->unsignedBigInteger('google_map_id');
-            $table->unsignedBigInteger('marketplace_id');
+            $table->unsignedBigInteger('google_map_id')->nullable();
+            $table->unsignedBigInteger('marketplace_id')->nullable();
             $table->timestamps();
 
             $table->index('user_id');
-            $table->index('google_map_is');
+            $table->index('google_map_id');
             $table->index('marketplace_id');
         });
     }
