@@ -8,10 +8,8 @@
 4. setup database `oneam-social-media` schema 
 5. run `php artisan key:generate`
 6. run `php artisan ide-helper:generate` (optional)
-7. run `npm install && run watch`
-8. run `php artisan pwa:install`
-9. run `php artisan migrate --seed`
-10. browse (https://oneam-social-media.test)
+7. run `php artisan migrate --seed`
+8. browse (https://oneam-social-media.test)
 
 ### First aid
 

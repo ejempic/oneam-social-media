@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 
 /*
@@ -17,4 +18,4 @@ use Illuminate\Http\Request;
 //    return $request->user();
 //});
 
-Route::apiResource('companies', \App\Http\Controllers\Api\CompanyController::class);
+Route::apiResource('post', PostController::class);
