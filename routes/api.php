@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfilesController;
-use App\Models\User;
+use App\Http\Controllers\CreateProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +23,11 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-// Route::apiResource('companies', \App\Http\Controllers\Api\CompanyController::class);
-
 Route::post('/auth/register', [AuthController::class, 'register']);
 
 Route::post('/auth/login', [AuthController::class, 'login']);
+
+//Route::post('/{user}/create-profile', [CreateProfileController::class, 'create']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/me', function(Request $request) {

@@ -49,13 +49,23 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Profile $profile)
+    public function update(Request $request, User $user)
     {
-        $profile->update([
-            'name' => request('name'),
+//        $this->authorize('update', $user);
+
+       $user->profile->update([
+            'fname' => 'required|string',
+            'lname' => 'string',
+            'dob' => 'string',
+            'address' => 'string',
+            'number' => 'string',
+            'sex' => 'string',
         ]);
 
-        return new ProfilesResource($profile);
+        return 'itworks';
+
+
+
     }
 
     /**

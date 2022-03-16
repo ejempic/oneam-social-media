@@ -15,15 +15,13 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $attr = $request->validate([
-
             'email' => 'required|string|email|unique:users,email',
             'password' => 'required|string|min:6|confirmed'
         ]);
 
         $user = User::create([
-
-            'password' => bcrypt($attr['password']),
-            'email' => $attr['email']
+            'email' => $attr['email'],
+            'password' => bcrypt($attr['password'])
         ]);
 
         return $this->success([
