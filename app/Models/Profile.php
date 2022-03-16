@@ -18,6 +18,7 @@ class Profile extends Model implements HasMedia
      * @var array
      */
     protected $fillable = [
+        
         'fname',
         'lname',
         'dob',
