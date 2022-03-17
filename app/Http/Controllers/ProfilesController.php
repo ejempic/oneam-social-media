@@ -17,7 +17,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        return ProfilesResource::collection(Profile::all());
+        return Profile::all();
     }
 
     /**
@@ -28,7 +28,19 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'fname' => 'required',
+            'lname' => 'required',
+            'dob' => 'required',
+            'address' => 'required',
+            'number' => 'required',
+            'sex' => 'required',
+        ]);
+
+        return Profile::updateOrCreate([
+            'user_id' => auth()->user()->id
+        ], $request->all());
+
     }
 
     /**
@@ -49,22 +61,8 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Profile $profile)
     {
-//        $this->authorize('update', $user);
-
-       $user->profile->update([
-            'fname' => 'required|string',
-            'lname' => 'string',
-            'dob' => 'string',
-            'address' => 'string',
-            'number' => 'string',
-            'sex' => 'string',
-        ]);
-
-        return 'itworks';
-
-
 
     }
 

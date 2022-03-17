@@ -18,7 +18,7 @@ class Profile extends Model implements HasMedia
      * @var array
      */
     protected $fillable = [
-
+        'user_id',
         'fname',
         'lname',
         'dob',
