@@ -24,7 +24,7 @@ class Profile extends Model implements HasMedia
         'dob',
         'address',
         'number',
-        'sex',
+        'sex'
     ];
 
     public function user()

@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Profile;
-use App\Models\User;
-use App\Http\Controllers\Controller;
 use App\Http\Resources\ProfilesResource;
 
 class ProfilesController extends Controller
@@ -63,7 +61,18 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, Profile $profile)
     {
+        $this->validate($request, [
+            'fname' => 'required',
+            'lname' => 'required',
+            'dob' => 'required',
+            'address' => 'required',
+            'number' => 'required',
+            'sex' => 'required',
+        ]);
 
+        return Profile::updateOrCreate([
+            'user_id' => auth()->user()->id
+        ], $request->all());
     }
 
     /**
